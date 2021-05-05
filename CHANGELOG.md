@@ -16,6 +16,8 @@ For details about compatibility between different releases, see the **Commitment
 
 ### Changed
 
+- Showing "Last seen" information in end device tables (replacing "Created").
+
 ### Deprecated
 
 ### Removed
