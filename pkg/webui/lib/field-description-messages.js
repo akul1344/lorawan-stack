@@ -98,8 +98,38 @@ const m = defineMessages({
   rx1DataRateOffsetDescription:
     'The Data Rate Offset sets the offset between the uplink data rate and the downlink data rate used to communicate with the End Device during the first reception slot (RX1).',
 
-  dataRateIndexDescription:
-    'The Data Rate Index specifies which data rate downlink communications will use, as given in the Regional Parameters.',
+  deviceBrandDescription: 'This is the manufacturer of your end device.',
+  deviceModelDescription: 'The particular model of your end device.',
+  deviceHardwareVersionDescription: 'The hardware version of your device.',
+  deviceHardwareVersionLocation:
+    'It should be provided by the manufacturer of your device, or printed on the device packaging.',
+  deviceHardwareVersionAbsence: 'Contact the manufacturer or reseller of your device.',
+  deviceFirmwareVersionDescription: 'The version of firmware loaded on your device.',
+  deviceFirmwareVersionLocation:
+    'The firmware version should be provided by the manufacturer of your device, or printed on the device packaging. It may be possible to upgrade your device firmware to a known version.',
+  deviceFirmwareVersionAbsence: 'Contact the manufacturer or reseller of your device.',
+  activationModeDescription:
+    'OTAA is the preferred and most secure way to connect a device. Devices perform a join-procedure with the network. ABP requires hardcoding the device address and security keys. Multicast is a virtual group of ABP devices which allows all devices to receive the same downlinks. Multicast groups do not support uplinks.',
+  activationModeLocation: 'You decide how to activate your devices. Whenever possible, use OTAA.',
+  deviceNameDescription: 'An optional human readable name to help you identify your device.',
+  deviceNameLocation: 'You make it up, so be creative!',
+  deviceDescDescription:
+    'An optional description, which can also be used to save notes about the end device.',
+  frameCounterWidthDescription:
+    'Most devices use a 32 bit frame counter to prevent replay attacks. Devices with extremely limited resources are permitted to use 16 bit counters.',
+  frameCounterWidthLocation: 'It should be provided by the device manufacturer.',
+  frameCounterWidthAbsence:
+    'Contact your manufacturer or reseller. Most devices use 32 bit counters. Selecting the wrong value will produce errors once the Up or Down frame counter exceeds 16 bits and rolls over.',
+  rx2DataRateIndexDescription: 'The data rate used for the RX2 receive window.',
+  rx2DataRateIndexLocation:
+    'This should be provided by the device manufacturer. It will also automatically configured by the network for OTAA devices.',
+  rx2DataRateIndexAbsence:
+    'Contact your device manufacturer or reseller. For OTAA, this does not need to be manually set and can be ignored.',
+  rx2FrequencyDescription: 'The frequency used for the RX2 receive window.',
+  rx2FrequencyLocation:
+    'This should be provided by the device manufacturer. It will also automatically configured by the network for OTAA devices.',
+  rx2FrequencyAbsence:
+    'Contact your device manufacturer or reseller. For OTAA, this does not need to be manually set and can be ignored.',
 })
 
 const descriptions = Object.freeze({
@@ -166,8 +196,47 @@ const descriptions = Object.freeze({
   [GLOSSARY_IDS.DATA_RATE_OFFSET]: {
     description: m.rx1DataRateOffsetDescription,
   },
-  [GLOSSARY_IDS.DATA_RATE_INDEX]: {
-    description: m.dataRateIndexDescription,
+  [GLOSSARY_IDS.DEVICE_BRAND]: {
+    description: m.deviceBrandDescription,
+  },
+  [GLOSSARY_IDS.DEVICE_MODEL]: {
+    description: m.deviceModelDescription,
+  },
+  [GLOSSARY_IDS.DEVICE_HARDWARE_VERSION]: {
+    description: m.deviceHardwareVersionDescription,
+    location: m.deviceHardwareVersionLocation,
+    absence: m.deviceHardwareVersionAbsence,
+  },
+  [GLOSSARY_IDS.DEVICE_FIRMWARE_VERSION]: {
+    description: m.deviceFirmwareVersionDescription,
+    location: m.deviceFirmwareVersionLocation,
+    absence: m.deviceFirmwareVersionAbsence,
+  },
+  [GLOSSARY_IDS.ACTIVATION_MODE]: {
+    description: m.activationModeDescription,
+    location: m.activationModeLocation,
+  },
+  [GLOSSARY_IDS.DEVICE_NAME]: {
+    description: m.deviceNameDescription,
+    location: m.deviceNameLocation,
+  },
+  [GLOSSARY_IDS.DEVICE_DESCRIPTION]: {
+    description: m.deviceDescDescription,
+  },
+  [GLOSSARY_IDS.FRAME_COUNTER_WIDTH]: {
+    description: m.frameCounterWidthDescription,
+    location: m.frameCounterWidthLocation,
+    absence: m.frameCounterWidthAbsence,
+  },
+  [GLOSSARY_IDS.RX2_DATA_RATE_INDEX]: {
+    description: m.rx2DataRateIndexDescription,
+    location: m.rx2DataRateIndexLocation,
+    absence: m.rx2DataRateIndexAbsence,
+  },
+  [GLOSSARY_IDS.RX2_FREQUENCY]: {
+    description: m.rx2FrequencyDescription,
+    location: m.rx2FrequencyLocation,
+    absence: m.rx2FrequencyAbsence,
   },
 })
 

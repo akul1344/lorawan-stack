@@ -104,6 +104,7 @@ const BasicSettingsForm = props => {
         placeholder={sharedMessages.deviceNamePlaceholder}
         description={sharedMessages.deviceNameDescription}
         component={Input}
+        glossaryId={glossaryIds.DEVICE_NAME}
       />
       <Form.Field
         title={sharedMessages.devDesc}
@@ -112,6 +113,7 @@ const BasicSettingsForm = props => {
         placeholder={sharedMessages.deviceDescPlaceholder}
         description={sharedMessages.deviceDescDescription}
         component={Input}
+        glossaryId={glossaryIds.DEVICE_DESCRIPTION}
       />
     </Wizard.Form>
   )

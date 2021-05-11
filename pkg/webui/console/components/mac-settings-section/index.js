@@ -94,6 +94,7 @@ const MacSettingsSection = props => {
         component={Radio.Group}
         encode={fCntWidthEncode}
         decode={fCntWidthDecode}
+        glossaryId={glossaryIds.FRAME_COUNTER_WIDTH}
       >
         <Radio label={sharedMessages['16Bit']} value={FRAME_WIDTH_COUNT.SUPPORTS_16_BIT} />
         <Radio label={sharedMessages['32Bit']} value={FRAME_WIDTH_COUNT.SUPPORTS_32_BIT} />
@@ -134,7 +135,7 @@ const MacSettingsSection = props => {
         component={Input}
         min={0}
         max={15}
-        glossaryId={glossaryIds.DATA_RATE_INDEX}
+        glossaryId={glossaryIds.RX2_DATA_RATE_INDEX}
       />
       <Form.Field
         type="number"
@@ -145,6 +146,7 @@ const MacSettingsSection = props => {
         placeholder={m.frequencyPlaceholder}
         name="mac_settings.rx2_frequency"
         component={Input}
+        glossaryId={glossaryIds.RX2_FREQUENCY}
       />
       <Form.Field
         indexAsKey

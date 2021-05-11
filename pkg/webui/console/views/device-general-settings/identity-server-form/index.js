@@ -218,6 +218,7 @@ const IdentityServerForm = React.memo(props => {
         placeholder={sharedMessages.deviceNamePlaceholder}
         description={sharedMessages.deviceNameDescription}
         component={Input}
+        glossaryId={glossaryIds.DEVICE_NAME}
       />
       <Form.Field
         title={sharedMessages.devDesc}
@@ -225,6 +226,7 @@ const IdentityServerForm = React.memo(props => {
         type="textarea"
         description={sharedMessages.deviceDescDescription}
         component={Input}
+        glossaryId={glossaryIds.DEVICE_DESCRIPTION}
       />
       <Form.Field
         title={sharedMessages.networkServerAddress}

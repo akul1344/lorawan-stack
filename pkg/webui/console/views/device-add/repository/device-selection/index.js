@@ -16,6 +16,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import PropTypes from '@ttn-lw/lib/prop-types'
+import glossaryIds from '@ttn-lw/lib/constants/glossary-ids'
 
 import style from '../repository.styl'
 import { useRepositoryContext } from '../context'
@@ -58,6 +59,7 @@ const Selection = props => {
         name="version_ids.brand_id"
         required
         onChange={onBrandChange}
+        glossaryId={glossaryIds.DEVICE_BRAND}
       />
       {hasBrand && (
         <ModelSelect
@@ -66,6 +68,7 @@ const Selection = props => {
           required
           brandId={brand}
           onChange={onModelChange}
+          glossaryId={glossaryIds.DEVICE_MODEL}
         />
       )}
       {hasModel && (
@@ -76,6 +79,7 @@ const Selection = props => {
           modelId={model}
           name="version_ids.hardware_version"
           onChange={onHwVersionChange}
+          glossaryId={glossaryIds.DEVICE_HARDWARE_VERSION}
         />
       )}
       {hasHwVersion && (
@@ -87,6 +91,7 @@ const Selection = props => {
           modelId={model}
           hwVersion={hardwareVersion}
           onChange={onFwVersionChange}
+          glossaryId={glossaryIds.DEVICE_FIRMWARE_VERSION}
         />
       )}
       {hasFwVersion && (
