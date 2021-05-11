@@ -130,6 +130,28 @@ const m = defineMessages({
     'This should be provided by the device manufacturer. It will also automatically configured by the network for OTAA devices.',
   rx2FrequencyAbsence:
     'Contact your device manufacturer or reseller. For OTAA, this does not need to be manually set and can be ignored.',
+  gatewayIdDescription: 'A unique identifier for your gateway.',
+  gatewayIdLocation: 'You make it up, so be creative!',
+  gatewayEuiDescription: 'A 64 bit extended unique identifier for your end device.',
+  gatewayEuiLocation:
+    'It should be provided to you by the manufacturer, or printed on the gateway packaging.',
+  gatewayEuiAbsence: 'Contact the manufacturer or reseller.',
+  gatewayNameDescription: 'An optional human readable name to help you identify your gateway.',
+  gatewayNameLocation: 'You make it up, so be creative!',
+  gatewayDescDescription:
+    'An optional description, which can also be used to save notes about the gateway.',
+  requireAuthenticatedConnectionDescription:
+    'This will only allow a gateway to connect if it uses a TLS enabled Basic Station or MQTT connection. It will not allow connections from UDP packet forwarders.',
+  gatewayStatusDescription:
+    'This allows information about the gateway to be shared publicly - the location, for example, to display on maps of publicly available LoRaWAN gateways.',
+  gatewayAttributesDescription:
+    'Attributes can be used to set arbitrary information about the entity, to be used by scripts, or simply for your own organization.',
+  scheduleDownlinkLateDescription:
+    'This legacy feature enables buffering of downlink messages on the network server, for gateways with no downlink queue. Scheduling consecutive downlinks on gateways with no queue will cause only the most recent downlink to be stored.',
+  dutyCycleDescription:
+    'When checked, the Network Server will only schedule messages respecting the duty cycle limitations of the selected frequency plan.',
+  scheduleAnytimeDelayDescription:
+    'Adjust the time that the Network Server schedules class C messages in advance. This is useful for gateways that have a known high latency backhaul, like 3G and satellite.',
 })
 
 const descriptions = Object.freeze({
@@ -238,11 +260,51 @@ const descriptions = Object.freeze({
     location: m.rx2FrequencyLocation,
     absence: m.rx2FrequencyAbsence,
   },
+  [GLOSSARY_IDS.GATEWAY_ID]: {
+    description: m.gatewayIdDescription,
+    location: m.gatewayIdLocation,
+  },
+  [GLOSSARY_IDS.GATEWAY_EUI]: {
+    description: m.gatewayEuiDescription,
+    location: m.gatewayEuiLocation,
+    absence: m.gatewayEuiAbsence,
+  },
+  [GLOSSARY_IDS.GATEWAY_NAME]: {
+    description: m.gatewayNameDescription,
+    location: m.gatewayNameLocation,
+  },
+  [GLOSSARY_IDS.GATEWAY_DESCRIPTION]: {
+    description: m.gatewayDescDescription,
+  },
+  [GLOSSARY_IDS.REQUIRE_AUTHENTICATED_CONNECTION]: {
+    description: m.requireAuthenticatedConnectionDescription,
+  },
+  [GLOSSARY_IDS.GATEWAY_STATUS]: {
+    description: m.gatewayStatusDescription,
+  },
+  [GLOSSARY_IDS.GATEWAY_ATTRIBUTES]: {
+    description: m.gatewayAttributesDescription,
+  },
+  [GLOSSARY_IDS.SCHEDULE_DOWNLINK_LATE]: {
+    description: m.scheduleDownlinkLateDescription,
+  },
+  [GLOSSARY_IDS.DUTY_CYCLE]: {
+    description: m.dutyCycleDescription,
+  },
+  [GLOSSARY_IDS.SCHEDULE_ANYTIME_DELAY]: {
+    description: m.scheduleAnytimeDelayDescription,
+  },
 })
 
 const links = Object.freeze({
   [GLOSSARY_IDS.FREQUENCY_PLAN]: {
     documentationPath: '/reference/frequency-plans',
+  },
+  [GLOSSARY_IDS.GATEWAY_ID]: {
+    documentationPath: '/reference/id-eui-constraints',
+  },
+  [GLOSSARY_IDS.GATEWAY_EUI]: {
+    documentationPath: '/reference/id-eui-constraints',
   },
 })
 

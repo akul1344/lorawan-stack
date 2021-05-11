@@ -135,6 +135,7 @@ const LorawanSettingsForm = React.memo(props => {
         name="schedule_downlink_late"
         component={Checkbox}
         description={sharedMessages.scheduleDownlinkLateDescription}
+        glossaryId={glossaryIds.SCHEDULE_DOWNLINK_LATE}
       />
       <Form.Field
         title={sharedMessages.dutyCycle}
@@ -142,6 +143,7 @@ const LorawanSettingsForm = React.memo(props => {
         component={Checkbox}
         label={sharedMessages.enforced}
         description={sharedMessages.enforceDutyCycleDescription}
+        glossaryId={glossaryIds.DUTY_CYCLE}
       />
       <Form.Field
         title={sharedMessages.scheduleAnyTimeDelay}
@@ -171,6 +173,7 @@ const LorawanSettingsForm = React.memo(props => {
             : undefined
         }
         required
+        glossaryId={glossaryIds.SCHEDULE_ANYTIME_DELAY}
       />
       <SubmitBar>
         <Form.Submit component={SubmitButton} message={sharedMessages.saveChanges} />

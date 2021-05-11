@@ -26,6 +26,7 @@ import Require from '@console/lib/components/require'
 
 import PropTypes from '@ttn-lw/lib/prop-types'
 import sharedMessages from '@ttn-lw/lib/shared-messages'
+import glossaryIds from '@ttn-lw/lib/constants/glossary-ids'
 
 import { mapAttributesToFormValue } from '@console/lib/attributes'
 
@@ -100,6 +101,7 @@ const BasicSettingsForm = React.memo(props => {
         required
         disabled
         component={Input}
+        glossaryId={glossaryIds.GATEWAY_ID}
       />
       <Form.Field
         title={sharedMessages.gatewayEUI}
@@ -109,12 +111,14 @@ const BasicSettingsForm = React.memo(props => {
         max={8}
         placeholder={sharedMessages.gatewayEUI}
         component={Input}
+        glossaryId={glossaryIds.GATEWAY_EUI}
       />
       <Form.Field
         title={sharedMessages.gatewayName}
         placeholder={sharedMessages.gatewayNamePlaceholder}
         name="name"
         component={Input}
+        glossaryId={glossaryIds.GATEWAY_NAME}
       />
       <Form.Field
         title={sharedMessages.gatewayDescription}
@@ -123,6 +127,7 @@ const BasicSettingsForm = React.memo(props => {
         name="description"
         type="textarea"
         component={Input}
+        glossaryId={glossaryIds.GATEWAY_DESCRIPTION}
       />
       <Form.Field
         title={sharedMessages.gatewayServerAddress}
@@ -137,6 +142,7 @@ const BasicSettingsForm = React.memo(props => {
         component={Checkbox}
         label={sharedMessages.enabled}
         description={sharedMessages.requireAuthenticatedConnectionDescription}
+        glossaryId={glossaryIds.REQUIRE_AUTHENTICATED_CONNECTION}
       />
       <Form.Field
         title={sharedMessages.lbsLNSSecret}
@@ -150,6 +156,7 @@ const BasicSettingsForm = React.memo(props => {
         component={Checkbox}
         label={sharedMessages.public}
         description={sharedMessages.statusDescription}
+        glossaryId={glossaryIds.GATEWAY_STATUS}
       />
       <Form.Field
         name="attributes"
@@ -159,6 +166,7 @@ const BasicSettingsForm = React.memo(props => {
         addMessage={sharedMessages.addAttributes}
         component={KeyValueMap}
         description={sharedMessages.attributeDescription}
+        glossaryId={glossaryIds.GATEWAY_ATTRIBUTES}
       />
       <Form.Field
         title={sharedMessages.automaticUpdates}

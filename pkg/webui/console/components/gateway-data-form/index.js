@@ -138,6 +138,7 @@ class GatewayDataForm extends React.Component {
           required
           disabled={update}
           component={Input}
+          glossaryId={glossaryIds.GATEWAY_ID}
         />
         <Form.Field
           title={sharedMessages.gatewayEUI}
@@ -147,12 +148,14 @@ class GatewayDataForm extends React.Component {
           max={8}
           placeholder={sharedMessages.gatewayEUI}
           component={Input}
+          glossaryId={glossaryIds.GATEWAY_EUI}
         />
         <Form.Field
           title={sharedMessages.gatewayName}
           placeholder={sharedMessages.gatewayNamePlaceholder}
           name="name"
           component={Input}
+          glossaryId={glossaryIds.GATEWAY_NAME}
         />
         <Form.Field
           title={sharedMessages.gatewayDescription}
@@ -161,6 +164,7 @@ class GatewayDataForm extends React.Component {
           name="description"
           type="textarea"
           component={Input}
+          glossaryId={glossaryIds.GATEWAY_DESCRIPTION}
         />
         <Form.Field
           title={sharedMessages.gatewayServerAddress}
@@ -175,6 +179,7 @@ class GatewayDataForm extends React.Component {
           component={Checkbox}
           label={sharedMessages.enabled}
           description={sharedMessages.requireAuthenticatedConnectionDescription}
+          glossaryId={glossaryIds.REQUIRE_AUTHENTICATED_CONNECTION}
         />
         <Form.Field
           title={sharedMessages.gatewayStatus}
@@ -182,6 +187,7 @@ class GatewayDataForm extends React.Component {
           component={Checkbox}
           label={sharedMessages.public}
           description={sharedMessages.statusDescription}
+          glossaryId={glossaryIds.GATEWAY_STATUS}
         />
         <Form.Field
           name="attributes"
@@ -191,6 +197,7 @@ class GatewayDataForm extends React.Component {
           addMessage={sharedMessages.addAttributes}
           component={KeyValueMap}
           description={sharedMessages.attributeDescription}
+          glossaryId={glossaryIds.GATEWAY_ATTRIBUTES}
         />
         <Message component="h4" content={sharedMessages.lorawanOptions} />
         <GsFrequencyPlansSelect
@@ -205,6 +212,7 @@ class GatewayDataForm extends React.Component {
           name="schedule_downlink_late"
           component={Checkbox}
           description={sharedMessages.scheduleDownlinkLateDescription}
+          glossaryId={glossaryIds.SCHEDULE_DOWNLINK_LATE}
         />
         <Form.Field
           title={sharedMessages.dutyCycle}
@@ -212,6 +220,7 @@ class GatewayDataForm extends React.Component {
           component={Checkbox}
           label={sharedMessages.enforced}
           description={sharedMessages.enforceDutyCycleDescription}
+          glossaryId={glossaryIds.DUTY_CYCLE}
         />
         <Form.Field
           title={sharedMessages.scheduleAnyTimeDelay}
@@ -241,6 +250,7 @@ class GatewayDataForm extends React.Component {
               : undefined
           }
           required
+          glossaryId={glossaryIds.SCHEDULE_ANYTIME_DELAY}
         />
         <Form.SubTitle title={sharedMessages.gatewayUpdateOptions} />
         <Form.Field
