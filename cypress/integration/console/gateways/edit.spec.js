@@ -123,7 +123,7 @@ describe('Gateway general settings', () => {
     cy.findByLabelText('Duty cycle')
       .should('exist')
       .and('have.attr', 'value', 'true')
-    cy.findDescriptionByLabelText('Duty cycle').should('be.visible')
+    cy.findDescriptionByLabelText('Enforce duty cycle limitation').should('be.visible')
     cy.findByTestId('schedule_anytime_delay')
       .should('be.visible')
       .and('have.attr', 'value', '0.523')

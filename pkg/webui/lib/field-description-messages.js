@@ -148,7 +148,7 @@ const m = defineMessages({
     'Attributes can be used to set arbitrary information about the entity, to be used by scripts, or simply for your own organization.',
   scheduleDownlinkLateDescription:
     'This legacy feature enables buffering of downlink messages on the network server, for gateways with no downlink queue. Scheduling consecutive downlinks on gateways with no queue will cause only the most recent downlink to be stored.',
-  dutyCycleDescription:
+  enforceDutyCycleDescription:
     'When checked, the Network Server will only schedule messages respecting the duty cycle limitations of the selected frequency plan.',
   scheduleAnytimeDelayDescription:
     'Adjust the time that the Network Server schedules class C messages in advance. This is useful for gateways that have a known high latency backhaul, like 3G and satellite.',
@@ -288,8 +288,8 @@ const descriptions = Object.freeze({
   [GLOSSARY_IDS.SCHEDULE_DOWNLINK_LATE]: {
     description: m.scheduleDownlinkLateDescription,
   },
-  [GLOSSARY_IDS.DUTY_CYCLE]: {
-    description: m.dutyCycleDescription,
+  [GLOSSARY_IDS.ENFORCE_DUTY_CYCLE]: {
+    description: m.enforceDutyCycleDescription,
   },
   [GLOSSARY_IDS.SCHEDULE_ANYTIME_DELAY]: {
     description: m.scheduleAnytimeDelayDescription,

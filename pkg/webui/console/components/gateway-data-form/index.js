@@ -215,12 +215,12 @@ class GatewayDataForm extends React.Component {
           glossaryId={glossaryIds.SCHEDULE_DOWNLINK_LATE}
         />
         <Form.Field
-          title={sharedMessages.dutyCycle}
+          title={sharedMessages.enforceDutyCycle}
           name="enforce_duty_cycle"
           component={Checkbox}
-          label={sharedMessages.enforced}
+          label={sharedMessages.enabled}
           description={sharedMessages.enforceDutyCycleDescription}
-          glossaryId={glossaryIds.DUTY_CYCLE}
+          glossaryId={glossaryIds.ENFORCE_DUTY_CYCLE}
         />
         <Form.Field
           title={sharedMessages.scheduleAnyTimeDelay}

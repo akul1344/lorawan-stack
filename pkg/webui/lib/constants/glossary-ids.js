@@ -48,6 +48,6 @@ export default Object.freeze({
   GATEWAY_STATUS: 'gateway-status',
   GATEWAY_ATTRIBUTES: 'gateway-attributes',
   SCHEDULE_DOWNLINK_LATE: 'schedule-downlink-late',
-  DUTY_CYCLE: 'duty-cycle',
+  ENFORCE_DUTY_CYCLE: 'duty-cycle',
   SCHEDULE_ANYTIME_DELAY: 'schedule-anytime-delay',
 })
