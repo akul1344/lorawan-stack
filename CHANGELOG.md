@@ -15,6 +15,7 @@ For details about compatibility between different releases, see the **Commitment
 - Listing all listed Packet Broker networks with `ttn-lw-cli packetbroker networks list`.
 - Include end device version identifiers in upstream messages (see `uplink_message.version_ids.brand_id`, `uplink_message.version_ids.model_id`, `uplink_message.version_ids.firmware_version`, `uplink_message.version_ids.hardware_version` and `uplink_message.version_ids.band_id` fields).
 - Reporting uplink and downlink message delivery state changes to Packet Broker. This will be used for statistical purposes (e.g. which message is processed successfully or why it errored) as well as LoRaWAN roaming (the `XmitDataAns` result code).
+- More contextual tooltips to end device and gateway form fields in the Console.
 
 ### Changed
 
