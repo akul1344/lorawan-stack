@@ -120,7 +120,7 @@ describe('Gateway general settings', () => {
     cy.findByLabelText('Frequency plan').should('not.exist')
     cy.findByRole('button', { name: 'Expand' }).click()
     cy.findByLabelText('Frequency plan').should('be.visible')
-    cy.findByLabelText('Duty cycle')
+    cy.findByLabelText('Enforce duty cycle limitation')
       .should('exist')
       .and('have.attr', 'value', 'true')
     cy.findDescriptionByLabelText('Enforce duty cycle limitation').should('be.visible')
