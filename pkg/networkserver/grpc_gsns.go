@@ -1281,19 +1281,35 @@ func (ns *NetworkServer) ReportTxAcknowledgment(ctx context.Context, up *ttnpb.G
 	if err != nil {
 		return nil, err
 	}
+	ids := down.GetEndDeviceIds()
+	if ids == nil {
+		return ttnpb.Empty, nil
+	}
 	pld := down.GetPayload().GetMACPayload()
 	if pld == nil {
 		return ttnpb.Empty, nil
 	}
+	if pld.GetFPort() == 0 {
+		return ttnpb.Empty, nil
+	}
+	dev, _, err := ns.devices.GetByID(ctx, ids.ApplicationIdentifiers, ids.GetDeviceId(), []string{"session.keys.session_key_id"})
+	if err != nil {
+		return ttnpb.Empty, nil
+	}
+
 	ns.enqueueApplicationUplinks(ctx, &ttnpb.ApplicationUp{
+		EndDeviceIdentifiers: *ids,
 		Up: &ttnpb.ApplicationUp_DownlinkSent{
 			DownlinkSent: &ttnpb.ApplicationDownlink{
-				FRMPayload:     pld.FRMPayload,
-				FPort:          pld.FPort,
-				FCnt:           pld.FullFCnt,
-				CorrelationIDs: down.GetCorrelationIDs(),
+				SessionKeyID:   dev.GetSession().GetSessionKeys().GetSessionKeyID(),
+				FRMPayload:     pld.GetFRMPayload(),
+				FPort:          pld.GetFPort(),
+				FCnt:           pld.GetFullFCnt(),
+				CorrelationIDs: up.GetTxAck().GetCorrelationIDs(),
+				Priority:       down.GetRequest().GetPriority(),
 			},
 		},
 	})
+
 	return ttnpb.Empty, nil
 }
