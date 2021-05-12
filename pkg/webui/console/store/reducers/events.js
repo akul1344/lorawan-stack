@@ -76,6 +76,12 @@ const addEvent = (state, event) => {
     return {}
   }
 
+  // When requesting historical events (with tail / after) it's possible that we
+  // still have some of those in the store, so we don't add them again.
+  if (events.find(e => e.unique_id === event.unique_id)) {
+    return {}
+  }
+
   const currentEvents = events
 
   // Keep events sorted in descending order by `time`.

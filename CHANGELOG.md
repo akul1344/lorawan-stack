@@ -22,6 +22,7 @@ For details about compatibility between different releases, see the **Commitment
 - Support for loading Device Repository profiles from different vendors if specified. This allows reusing standard end device profiles from module makers and LoRaWAN end device stack vendors.
 - Filtering out verbose events in the event views in the Console.
 - The `gs.up.forward` event now includes the host an uplink was forwarded to.
+- The Console can now show recent historical events in networks that have events storage enabled.
 
 ### Changed
 

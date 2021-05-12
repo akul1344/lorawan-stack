@@ -107,7 +107,7 @@ const createEventsConnectLogics = (reducerName, entityName, onEventsStart) => {
         const { id } = action
 
         try {
-          channel = await onEventsStart([id])
+          channel = await onEventsStart([id], 10)
 
           channel.on('start', () => dispatch(startEventsSuccess(id)))
           channel.on('chunk', message => dispatch(getEventSuccess(id, message)))
